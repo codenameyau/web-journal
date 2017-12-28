@@ -19,13 +19,8 @@ const BackgroundDecorator = (storyFn) => (
 
 storiesOf('Snow', module)
   .addDecorator(BackgroundDecorator)
-  .add('with text', () => (
+  .add('demo', () => (
     <Snow onClick={action('clicked')}>
       Hello Snow
-    </Snow>
-  ))
-  .add('with some emoji', () => (
-    <Snow onClick={action('clicked')}>
-      😀 😎 👍 💯
     </Snow>
   ))
