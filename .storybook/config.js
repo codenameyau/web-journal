@@ -1,6 +1,5 @@
 import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
-
 import './config.css';
 
 setOptions({

@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Background = styled.div`
-  width: 100%;
+  position: relative;
+  width: 100vw;
   height: 100vh;
   background: ${({background}) => background || '#fff'};
 `;
