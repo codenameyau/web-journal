@@ -6,7 +6,9 @@ import { linkTo } from '@storybook/addon-links';
 
 export const Welcome = () => {
   return (
-    <div class=""></div>
+    <div class="">
+      Hello World
+    </div>
   );
 }
 

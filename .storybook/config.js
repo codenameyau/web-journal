@@ -1,6 +1,6 @@
 import { configure } from '@storybook/react';
 
-import './storybook.css';
+import './config.css';
 
 // Automatically include every file found in directory.
 const req = require.context('../stories', true, /\.stories.js$/);
