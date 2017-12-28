@@ -1,5 +1,11 @@
 # web-components
 
+Installation and Setup
+```
+npm install
+npm run storybook
+```
+
 ## Web Assets
 - [High Res Stock Photos](https://github.com/codenameyau/assets#stock-photos)
 - [Responsive Website Templates](https://github.com/codenameyau/assets#templates)

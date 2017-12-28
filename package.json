@@ -5,12 +5,20 @@
   "dependencies": {
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "styled-components": "^2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "export NODE_PATH=src && build-storybook -s public"
+  },
+  "devDependencies": {
+    "@storybook/react": "^3.2.19",
+    "@storybook/addon-actions": "^3.2.19",
+    "@storybook/addon-links": "^3.2.19"
   }
 }
