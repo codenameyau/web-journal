@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export const clamp = (num, min, max) => {
+  return Math.max(Math.min(num, max), min);
+};
+
 export const randomInclusive = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
@@ -23,14 +27,14 @@ export class SnowCanvas extends React.Component {
   constructor(props) {
     super(props);
 
-    this._maxParticles = 20;
-    this._maxRadius = 5;
+    this._maxParticles = 30;
+    this._maxRadius = 6;
     this._360Deg = Math.PI * 2;
-    this._color = 'rgba(255, 255, 255, 0.5)';
+    this._color = 'rgba(255, 255, 255, 0.25)';
 
     this.particles = [];
     this.angle = 0; // wind oscillation
-    this.maxWind = 4; // wind strength
+    this.maxWind = 5; // wind strength
     this.wind = randomNormal(0, this.maxWind); // wind factor
 
     this.resize = this.resize.bind(this);
@@ -65,13 +69,13 @@ export class SnowCanvas extends React.Component {
     const maxRadius = this.props.radius || this._maxRadius;
 
     for (var i=0; i < maxParticles; i++) {
-      const radius = 1 + Math.random() * maxRadius;
+      const radius = clamp(Math.random() * maxRadius, 2.5, maxRadius);
 
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
         radius: radius,
-        speed: (radius / 3) + (1 * Math.random())
+        speed: (radius / 2.5) + (1 * Math.random())
       });
     }
   }
@@ -98,7 +102,7 @@ export class SnowCanvas extends React.Component {
       this.wind = randomNormal(0, this.maxWind);
       this.angle = 0;
     } else {
-      this.angle += 0.01;
+      this.angle += Math.random() * 0.01; // wind oscillation factor
     }
 
     this.particles.forEach((particle) => {
@@ -115,7 +119,7 @@ export class SnowCanvas extends React.Component {
       }
 
       // Particle has passed right of screen, so draw new particle from right.
-      else if (particle.y > width) {
+      else if (particle.x > width) {
         particle.x = 0;
         particle.y = Math.random() * height;
       }
