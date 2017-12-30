@@ -71,8 +71,12 @@ export class SnowCanvas extends React.Component {
   }
 
   render() {
+    const styles = {
+      display: 'block' // removes scrollbar
+    };
+
     return (
-      <canvas ref={(canvas) => this.canvas = canvas}>
+      <canvas style={styles} ref={(canvas) => this.canvas = canvas}>
       </canvas>
     )
   }
