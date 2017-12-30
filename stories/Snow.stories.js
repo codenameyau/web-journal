@@ -8,15 +8,17 @@ const getBackgroundColor = () => {
   return '#6b92b9';
 };
 
-const BackgroundDecorator = (storyFn) => (
-  <Background background={getBackgroundColor()}>
-    {storyFn()}
-    Hello World
-  </Background>
-);
+// const BackgroundDecorator = (storyFn) => (
+//   <Background background={getBackgroundColor()}>
+//     {storyFn()}
+//     Hello World
+//   </Background>
+// );
 
 storiesOf('Snow', module)
-  .addDecorator(BackgroundDecorator)
   .add('demo', () => (
-    <Snow />
+    <Background background={getBackgroundColor()}>
+      <Snow />
+      Hellow
+    </Background>
   ))
