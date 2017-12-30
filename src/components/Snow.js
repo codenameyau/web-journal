@@ -28,6 +28,7 @@ export class SnowCanvas extends React.Component {
     super(props);
 
     this._maxParticles = 30;
+    this._minRadius = 1;
     this._maxRadius = 6;
     this._360Deg = Math.PI * 2;
     this._color = 'rgba(255, 255, 255, 0.25)';
@@ -65,11 +66,12 @@ export class SnowCanvas extends React.Component {
   }
 
   reset() {
-    const maxParticles = this.props.max || this._maxParticles;
-    const maxRadius = this.props.radius || this._maxRadius;
+    const maxParticles = this.props.particles || this._maxParticles;
+    const minRadius = this.props.minRadius || this._minRadius;
+    const maxRadius = this.props.maxRadius || this._maxRadius;
 
     for (var i=0; i < maxParticles; i++) {
-      const radius = clamp(Math.random() * maxRadius, 2.5, maxRadius);
+      const radius = clamp(Math.random() * maxRadius, minRadius, maxRadius);
 
       this.particles.push({
         x: Math.random() * this.canvas.width,
@@ -150,7 +152,7 @@ export class SnowCanvas extends React.Component {
 export const Snow = (props) => {
   return (
     <CavasContainer>
-      <SnowCanvas></SnowCanvas>
+      <SnowCanvas {...props}></SnowCanvas>
     </CavasContainer>
   )
 };
