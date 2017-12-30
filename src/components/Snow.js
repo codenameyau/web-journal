@@ -23,6 +23,7 @@ export class SnowCanvas extends React.Component {
     this.resize = this.resize.bind(this);
     this.reset = this.reset.bind(this);
     this.draw = this.draw.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount() {
@@ -33,6 +34,7 @@ export class SnowCanvas extends React.Component {
 
     this.reset();
     this.draw();
+    this.update();
   }
 
   componentWillUnmount() {
@@ -59,8 +61,10 @@ export class SnowCanvas extends React.Component {
   }
 
   draw() {
-    const ctx = this.canvas.getContext('2d');
+    const canvas = this.canvas;
+    const ctx = canvas.getContext('2d');
     ctx.fillStyle = this.props.color || this._color;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
 
     this.particles.forEach((particle) => {
@@ -68,6 +72,15 @@ export class SnowCanvas extends React.Component {
       ctx.arc(particle.x, particle.y, particle.radius, 0, this._360Deg);
       ctx.fill();
     });
+  }
+
+  update() {
+    this.particles.forEach((particle) => {
+      particle.y = particle.y + 2;
+    });
+
+    this.draw();
+    window.requestAnimationFrame(this.update);
   }
 
   render() {
