@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const clamp = (num, min, max) => {
   return Math.max(Math.min(num, max), min);
@@ -148,6 +149,13 @@ export class SnowCanvas extends React.Component {
     )
   }
 }
+
+SnowCanvas.propTypes = {
+  particles: PropTypes.number,
+  minRadius: PropTypes.number,
+  maxRadius: PropTypes.number,
+  color: PropTypes.string,
+};
 
 export const Snow = (props) => {
   return (

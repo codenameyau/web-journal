@@ -36,7 +36,7 @@ stories.add('interactive', () => (
 
 stories.add('source code', () => (
   <GithubLinks
-    componentLink="src/components/Snow.js"
-    storyLink="stories/Snow.stories.js"
+    Snow="src/components/Snow.js"
+    story="stories/Snow.stories.js"
   />
 ));
