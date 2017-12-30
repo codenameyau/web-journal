@@ -2,36 +2,50 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CavasContainer = styled.div`
-  position: relative;
-`;
-
-const Canvas = styled.canvas`
   position: absolute;
-  background: red;
-  width: 500px;
-  height: 500px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;
 
 export class SnowCanvas extends React.Component {
   constructor(props) {
     super(props);
 
-    this._maxParticles = 25;
+    this._maxParticles = 10;
     this._maxRadius = 5;
     this._360Deg = Math.PI * 2;
     this._color = 'rgba(255, 255, 255, 0.8)';
 
     this.particles = [];
-    this.initParticles = this.initParticles.bind(this);
+
+    this.resize = this.resize.bind(this);
+    this.reset = this.reset.bind(this);
     this.draw = this.draw.bind(this);
   }
 
   componentDidMount() {
-    this.initParticles();
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', this.resize, false);
+
+    this.reset();
     this.draw();
   }
 
-  initParticles() {
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize, false);
+  }
+
+  resize() {
+    this.canvas.width = window.innerWidth;
+    this.canvas.height = window.innerHeight;
+    this.draw();
+  }
+
+  reset() {
     const maxParticles = this.props.max || this._maxParticles;
     const maxRadius = this.props.radius || this._maxRadius;
 
@@ -39,7 +53,7 @@ export class SnowCanvas extends React.Component {
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
-        radius: Math.random() * maxRadius
+        radius: maxRadius
       });
     }
   }
@@ -58,8 +72,8 @@ export class SnowCanvas extends React.Component {
 
   render() {
     return (
-      <Canvas innerRef={(canvas) => this.canvas = canvas}>
-      </Canvas>
+      <canvas ref={(canvas) => this.canvas = canvas}>
+      </canvas>
     )
   }
 }
