@@ -1,6 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+export const randomInclusive = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+export const randomNormal = (min, max) => {
+  var valueA = randomInclusive(min, max);
+  var valueB = randomInclusive(min, max);
+  return parseInt((valueA + valueB) / 2, 10);
+};
+
 const CavasContainer = styled.div`
   position: absolute;
   top: 0;
@@ -13,12 +23,15 @@ export class SnowCanvas extends React.Component {
   constructor(props) {
     super(props);
 
-    this._maxParticles = 10;
+    this._maxParticles = 20;
     this._maxRadius = 5;
     this._360Deg = Math.PI * 2;
-    this._color = 'rgba(255, 255, 255, 0.8)';
+    this._color = 'rgba(255, 255, 255, 0.5)';
 
     this.particles = [];
+    this.angle = 0; // wind oscillation
+    this.maxWind = 4; // wind strength
+    this.wind = randomNormal(0, this.maxWind); // wind factor
 
     this.resize = this.resize.bind(this);
     this.reset = this.reset.bind(this);
@@ -52,10 +65,13 @@ export class SnowCanvas extends React.Component {
     const maxRadius = this.props.radius || this._maxRadius;
 
     for (var i=0; i < maxParticles; i++) {
+      const radius = 1 + Math.random() * maxRadius;
+
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
-        radius: maxRadius
+        radius: radius,
+        speed: (radius / 3) + (1 * Math.random())
       });
     }
   }
@@ -75,8 +91,40 @@ export class SnowCanvas extends React.Component {
   }
 
   update() {
+    const {width, height} = this.canvas;
+
+    // Completed one full wind oscillation.
+    if (this.angle > this._360Deg) {
+      this.wind = randomNormal(0, this.maxWind);
+      this.angle = 0;
+    } else {
+      this.angle += 0.01;
+    }
+
     this.particles.forEach((particle) => {
-      particle.y = particle.y + 2;
+      // Particle has passed bottom of screen, so draw new particle from top.
+      if (particle.y > height) {
+        particle.x = Math.random() * width;
+        particle.y = 0;
+      }
+
+      // Particle has passed left of screen, so draw new particle from right.
+      else if (particle.x < 0) {
+        particle.x = width;
+        particle.y = Math.random() * height;
+      }
+
+      // Particle has passed right of screen, so draw new particle from right.
+      else if (particle.y > width) {
+        particle.x = 0;
+        particle.y = Math.random() * height;
+      }
+
+      // Move particle normally.
+      else {
+        particle.x = particle.x + (this.wind * Math.sin(this.angle));
+        particle.y = particle.y + particle.speed;
+      }
     });
 
     this.draw();
