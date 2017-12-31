@@ -18,20 +18,20 @@ npm run storybook
 - [Web Development Blogs](#blogs)
 
 ### React Checklist
-- Awesome React: the awesome react list - https://github.com/enaqx/awesome-react
-- CreateReactApp: starting new app - https://github.com/facebookincubator/create-react-app
-- Webpack: module loader and bundler - https://github.com/webpack/webpack
-- Babel: transpiler for next generation js - https://github.com/babel/babel
-- Redux: predictable state management - https://github.com/reactjs/redux
-- Redux DevTools: redux inspection extension - https://github.com/gaearon/redux-devtools
-- Styled Components: combine components with css - https://github.com/styled-components/styled-components
-- React Router: declarative routing - https://github.com/ReactTraining/react-router
-- Storybook: isolated component development and testing - https://github.com/storybooks/storybook
-- Ramda: pure utility functions - https://github.com/ramda/ramda
-- Razzle: easy server side rendering - https://github.com/jaredpalmer/razzle
-- React Select: select 2 component - https://github.com/JedWatson/react-select
-- Why Did You Update: logs unnecessary render - https://github.com/maicki/why-did-you-update
-- Proptypes: prop validation - https://github.com/facebook/prop-types
+- [Awesome React](https://github.com/enaqx/awesome-react) - The awesome react list
+- [CreateReactApp](https://github.com/facebookincubator/create-react-app) - Starting new app
+- [Webpack](https://github.com/webpack/webpack) - Module loader and bundler
+- [Babel](https://github.com/babel/babel) - Transpiler for next generation js
+- [Redux](https://github.com/reactjs/redux) - Predictable state management
+- [Redux DevTools](https://github.com/gaearon/redux-devtools) - Redux inspection extension
+- [Styled Components](https://github.com/styled-components/styled-components) - Combine components with css
+- [React Router](https://github.com/ReactTraining/react-router) - Declarative routing
+- [Storybook](https://github.com/storybooks/storybook) - Isolated component development and testing
+- [Ramda](https://github.com/ramda/ramda) - Pure utility functions
+- [Razzle](https://github.com/jaredpalmer/razzle) - Easy server side rendering
+- [React Select](https://github.com/JedWatson/react-select) - Select 2 component
+- [Why Did You Update](https://github.com/maicki/why-did-you-update) - Logs unnecessary render
+- [Proptypes](https://github.com/facebook/prop-types) - Prop validation
 
 ### Stock Photos
 - StockSnap - https://stocksnap.io/
