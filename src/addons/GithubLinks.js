@@ -1,33 +1,49 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import OctocatSVG from '../assets/svg/octocat.svg';
+
 const REPO_LINK = 'https://github.com/codenameyau/web-components/blob/master/';
 
 const Container = styled.div`
-  padding: 10px 20px;
+  position: relative;
+  padding: 1em;
+`;
+
+const GithubIcon = styled.div`
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: url(${OctocatSVG});
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 5em;
+  width: 5em;
+`;
+
+const GithubLinkContainer = styled.div`
+  margin-bottom: 1.5em;
 `;
 
 const H2 = styled.h2`
   text-transform: capitalize;
-  margin-bottom: 5px;
 `;
 
 export const GithubLinks = (props) => {
   const showLink = (propName) => (
     props[propName] &&
-    <div>
+    <GithubLinkContainer key={propName}>
       <H2>{propName}</H2>
       <a target="_blank" href={REPO_LINK + props[propName]}>
         {REPO_LINK + props[propName]}
       </a>
-    </div>
+    </GithubLinkContainer>
   );
 
   return (
     <Container>
-      {
-        Object.keys(props).map((key) => showLink(key))
-      }
+      <GithubIcon/>
+      {Object.keys(props).map((key) => showLink(key))}
     </Container>
   );
 };

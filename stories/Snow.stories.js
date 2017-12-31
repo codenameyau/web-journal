@@ -11,11 +11,7 @@ import Snow from 'components/Snow';
 
 const getBackgroundColor = () => {
   // TODO: Dynamically change bg color based on time of day.
-  const colors = [
-    '#6ea1d4'
-  ];
-
-  return '#4e7faf';
+  return '#4f98de';
 };
 
 const stories = storiesOf('Snow', module);

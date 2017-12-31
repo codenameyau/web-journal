@@ -98,6 +98,8 @@ export class SnowCanvas extends React.Component {
   }
 
   update() {
+    if (!this.canvas) { return; }
+
     const {width, height} = this.canvas;
 
     // Completed one full wind oscillation.
