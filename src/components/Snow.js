@@ -34,21 +34,23 @@ export class SnowCanvas extends React.Component {
     color: PropTypes.string,
   }
 
+  static defaultProps = {
+    particles: 30,
+    minRadius: 2,
+    maxRadius: 5,
+    color: 'rgba(255, 255, 255, 0.35)'
+  }
+
   constructor(props) {
     super(props);
 
-    this._maxParticles = 30;
-    this._minRadius = 1;
-    this._maxRadius = 6;
     this._360Deg = Math.PI * 2;
-    this._color = 'rgba(255, 255, 255, 0.25)';
     this._animationId = 0;
-
-    this.particles = [];
-    this.oscillation = 0.01; // wind oscillation factor
-    this.angle = 0; // wind oscillation step
-    this.winds = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 5];
-    this.wind = pickRandomly(this.winds);
+    this._particles = [];
+    this._oscillation = 0.01; // wind oscillation factor
+    this._angle = 0; // wind oscillation step
+    this._winds = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 5];
+    this._wind = pickRandomly(this._winds);
 
     this.resize = this.resize.bind(this);
     this.reset = this.reset.bind(this);
@@ -81,35 +83,30 @@ export class SnowCanvas extends React.Component {
   }
 
   reset() {
+    const { particles, minRadius, maxRadius } = this.props;
     window.cancelAnimationFrame(this._animationId);
+    this._particles.length = 0;
 
-    console.log('props: particles reset', this.props.particles);
-    const maxParticles = isNaN(this.props.particles) ? this._maxParticles : this.props.particles;
-    const minRadius = this.props.minRadius || this._minRadius;
-    const maxRadius = this.props.maxRadius || this._maxRadius;
-
-    this.particles = [];
-
-    for (var i=0; i < maxParticles; i++) {
+    for (var i=0; i < particles; i++) {
       const radius = randomRadius(minRadius, maxRadius);
-
-      this.particles.push({
+      const particle = {
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
         radius: radius,
         speed: calcSpeed(radius)
-      });
+      }
+      this._particles.push(particle);
     }
   }
 
   draw() {
     const canvas = this.canvas;
     const ctx = canvas.getContext('2d');
-    ctx.fillStyle = this.props.color || this._color;
+    ctx.fillStyle = this.props.color;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
 
-    this.particles.forEach((particle) => {
+    this._particles.forEach((particle) => {
       ctx.moveTo(particle.x, particle.y);
       ctx.arc(particle.x, particle.y, particle.radius, 0, this._360Deg);
       ctx.fill();
@@ -119,40 +116,45 @@ export class SnowCanvas extends React.Component {
   update() {
     if (!this.canvas) { return; }
 
-    const minRadius = this.props.minRadius || this._minRadius;
-    const maxRadius = this.props.maxRadius || this._maxRadius;
+    const {minRadius, maxRadius} = this.props;
     const {width, height} = this.canvas;
 
     // Completed one full wind oscillation.
-    if (this.angle > this._360Deg) {
-      this.wind = pickRandomly(this.winds);
-      this.angle = 0;
+    if (this._angle > this._360Deg) {
+      this._wind = pickRandomly(this._winds);
+      this._angle = 0;
     } else {
-      this.angle += Math.random() * this.oscillation;
+      this._angle += Math.random() * this._oscillation;
     }
 
-    this.particles.forEach((particle) => {
+    this._particles.forEach((particle) => {
       // Particle has passed bottom of screen, so draw new particle from top.
       if (particle.y > height) {
         particle.x = Math.random() * width;
         particle.y = 0;
+        particle.radius = randomRadius(minRadius, maxRadius);
+        particle.speed = calcSpeed(particle.radius);
       }
 
       // Particle has passed left of screen, so draw new particle from right.
       else if (particle.x < 0) {
         particle.x = width;
         particle.y = Math.random() * height;
+        particle.radius = randomRadius(minRadius, maxRadius);
+        particle.speed = calcSpeed(particle.radius);
       }
 
       // Particle has passed right of screen, so draw new particle from right.
       else if (particle.x > width) {
         particle.x = 0;
         particle.y = Math.random() * height;
+        particle.radius = randomRadius(minRadius, maxRadius);
+        particle.speed = calcSpeed(particle.radius);
       }
 
       // Move particle normally.
       else {
-        particle.x = particle.x + (this.wind * Math.sin(this.angle));
+        particle.x = particle.x + (this._wind * Math.sin(this._angle));
         particle.y = particle.y + particle.speed;
       }
     });

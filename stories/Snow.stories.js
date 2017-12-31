@@ -16,7 +16,7 @@ stories.addDecorator(withKnobs);
 stories.add('demo', () => (
   <Background background={`url(${WinterNight})`}>
     <Snow
-      color="rgba(255, 255, 255, 0.1)"
+      color="rgba(255, 255, 255, 0.25)"
       particles={40}
       maxRadius={3}
     />
