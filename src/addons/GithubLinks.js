@@ -7,12 +7,13 @@ const REPO_LINK = 'https://github.com/codenameyau/web-components/blob/master/';
 
 const Container = styled.div`
   position: relative;
-  padding: 1em;
+  width: 100%;
+  height: 100vh;
 `;
 
 const GithubIcon = styled.div`
   position: absolute;
-  top: 1.2em;
+  bottom: 1.2em;
   right: 1.2em;
   background: url(${OctocatSVG});
   background-repeat: no-repeat;
@@ -27,8 +28,12 @@ const GithubIcon = styled.div`
   }
 `;
 
+const Content = styled.div`
+  padding: 1.2em;
+`;
+
 const GithubLinkContainer = styled.div`
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em;
 `;
 
 const H2 = styled.h2`
@@ -48,8 +53,10 @@ export const GithubLinks = (props) => {
 
   return (
     <Container>
-      <GithubIcon/>
-      {Object.keys(props).map((key) => showLink(key))}
+      <Content>
+        <GithubIcon />
+        {Object.keys(props).map((key) => showLink(key))}
+      </Content>
     </Container>
   );
 };

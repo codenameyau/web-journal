@@ -25,17 +25,17 @@ stories.add('demo', () => (
 
 stories.add('interactive', () => {
   const numberOptions = {
-    range: false,
+    range: true,
     min: 1,
-    max: 60,
-    step: 1
+    max: 80,
+    step: 2
   };
 
   return (
     <Background background={color('BG Color', '#4f98de')}>
       <Snow
         color={color('Color', 'rgba(255, 255, 255, 0.25)')}
-        particles={number('Particles', 20)}
+        particles={number('Particles', 20, numberOptions)}
       />
     </Background>
   )
@@ -43,7 +43,7 @@ stories.add('interactive', () => {
 
 stories.add('source code', () => (
   <GithubLinks
-    Snow="src/components/Snow.js"
-    story="stories/Snow.stories.js"
+    snow="src/components/Snow.js"
+    stories="stories/Snow.stories.js"
   />
 ));

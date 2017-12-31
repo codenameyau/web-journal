@@ -37,7 +37,12 @@ setOptions({
    * show addon panel as a vertical panel on the right
    * @type {Boolean}
    */
-  addonPanelInRight: true,
+  addonPanelInRight: false,
+  /**
+   * show panel on the right instead of bottom
+   * @type {Boolean}
+   */
+  downPanelInRight: true,
   /**
    * sorts stories
    * @type {Boolean}
