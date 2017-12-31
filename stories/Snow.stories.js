@@ -25,7 +25,7 @@ stories.add('demo', () => (
 
 stories.add('interactive', () => {
   const numberOptions = {
-    range: true,
+    range: false,
     min: 1,
     max: 60,
     step: 1
@@ -35,7 +35,7 @@ stories.add('interactive', () => {
     <Background background={color('BG Color', '#4f98de')}>
       <Snow
         color={color('Color', 'rgba(255, 255, 255, 0.25)')}
-        particles={number('Particles', 20, numberOptions)}
+        particles={number('Particles', 20)}
       />
     </Background>
   )

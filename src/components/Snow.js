@@ -10,6 +10,14 @@ export const pickRandomly = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
+export const randomRadius = (min = 1, max = 5) => {
+  return clamp((Math.random() * max), min, max);
+};
+
+export const calcSpeed = (radius) => {
+  return (radius / 2.5) + (1 * Math.random());
+};
+
 const CavasContainer = styled.div`
   position: absolute;
   top: 0;
@@ -19,6 +27,13 @@ const CavasContainer = styled.div`
 `;
 
 export class SnowCanvas extends React.Component {
+
+  static propTypes = {
+    minRadius: PropTypes.number,
+    maxRadius: PropTypes.number,
+    color: PropTypes.string,
+  }
+
   constructor(props) {
     super(props);
 
@@ -27,6 +42,7 @@ export class SnowCanvas extends React.Component {
     this._maxRadius = 6;
     this._360Deg = Math.PI * 2;
     this._color = 'rgba(255, 255, 255, 0.25)';
+    this._animationId = 0;
 
     this.particles = [];
     this.oscillation = 0.01; // wind oscillation factor
@@ -45,14 +61,17 @@ export class SnowCanvas extends React.Component {
     this.canvas.height = window.innerHeight;
 
     window.addEventListener('resize', this.resize, false);
-
-    this.reset();
-    this.draw();
-    this.update();
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.resize, false);
+    window.cancelAnimationFrame(this._animationId);
+  }
+
+  componentDidUpdate() {
+    this.reset();
+    this.draw();
+    this.update();
   }
 
   resize() {
@@ -62,20 +81,23 @@ export class SnowCanvas extends React.Component {
   }
 
   reset() {
-    const maxParticles = this.props.particles || this._maxParticles;
+    window.cancelAnimationFrame(this._animationId);
+
+    console.log('props: particles reset', this.props.particles);
+    const maxParticles = isNaN(this.props.particles) ? this._maxParticles : this.props.particles;
     const minRadius = this.props.minRadius || this._minRadius;
     const maxRadius = this.props.maxRadius || this._maxRadius;
 
     this.particles = [];
 
     for (var i=0; i < maxParticles; i++) {
-      const radius = clamp(Math.random() * maxRadius, minRadius, maxRadius);
+      const radius = randomRadius(minRadius, maxRadius);
 
       this.particles.push({
         x: Math.random() * this.canvas.width,
         y: Math.random() * this.canvas.height,
         radius: radius,
-        speed: (radius / 2.5) + (1 * Math.random())
+        speed: calcSpeed(radius)
       });
     }
   }
@@ -97,7 +119,10 @@ export class SnowCanvas extends React.Component {
   update() {
     if (!this.canvas) { return; }
 
+    const minRadius = this.props.minRadius || this._minRadius;
+    const maxRadius = this.props.maxRadius || this._maxRadius;
     const {width, height} = this.canvas;
+
     // Completed one full wind oscillation.
     if (this.angle > this._360Deg) {
       this.wind = pickRandomly(this.winds);
@@ -133,7 +158,7 @@ export class SnowCanvas extends React.Component {
     });
 
     this.draw();
-    window.requestAnimationFrame(this.update);
+    this._animationId = window.requestAnimationFrame(this.update);
   }
 
   render() {
@@ -147,12 +172,6 @@ export class SnowCanvas extends React.Component {
     )
   }
 }
-
-SnowCanvas.propTypes = {
-  minRadius: PropTypes.number,
-  maxRadius: PropTypes.number,
-  color: PropTypes.string,
-};
 
 export const Snow = (props) => {
   return (
