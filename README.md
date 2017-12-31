@@ -34,39 +34,39 @@ npm run storybook
 - [Proptypes](https://github.com/facebook/prop-types) - Prop validation
 
 ### Stock Photos
-- StockSnap - https://stocksnap.io/
-- Pixabay - https://pixabay.com/
-- The Stocks - http://thestocks.im
-- Gratisography - https://gratisography.com/
-- Unsplash - https://unsplash.com/
+- [StockSnap](https://stocksnap.io/)
+- [Pixabay](https://pixabay.com/)
+- [The Stocks](http://thestocks.im)
+- [Gratisography](https://gratisography.com/)
+- [Unsplash](https://unsplash.com/)
 
 ### Templates
-- HTML5 Up - https://html5up.net/
-- Start Bootstrap - https://startbootstrap.com/
-- SquareSpace Templates - https://www.squarespace.com/templates/
+- [HTML5 Up](https://html5up.net/)
+- [Start Bootstrap](https://startbootstrap.com/)
+- [SquareSpace Templates](https://www.squarespace.com/templates/)
 
 ### Icons
-- ShareIcon - https://www.shareicon.net/
-- DryIcons - http://dryicons.com/
-- FindIcons - http://findicons.com/pack
+- [ShareIcon](https://www.shareicon.net/)
+- [DryIcons](http://dryicons.com/)
+- [FindIcons](http://findicons.com/pack)
 
 ### Fonts
-- Google Fonts - https://fonts.google.com/
-- FFonts - https://www.ffonts.net/
+- [Google Fonts](https://fonts.google.com/)
+- [FFonts](https://www.ffonts.net/)
 
 ### Colors
-- FlatUI Colors - http://flatuicolors.com/
-- MaterialUI Colors - http://materialuicolors.co
+- [FlatUI Colors](http://flatuicolors.com/)
+- [MaterialUI Colors](http://materialuicolors.co)
 
 ### Backgrounds
-- SubtlePatterns - https://www.toptal.com/designers/subtlepatterns/
+- [SubtlePatterns](https://www.toptal.com/designers/subtlepatterns/)
 
 ### Sounds
-- NCS NoCopyrightSounds - http://nocopyrightsounds.co.uk/
-- ZapSplat - https://www.zapsplat.com/sound-effect-categories/
-- FreeSound - https://freesound.org/
+- [NCS NoCopyrightSounds](http://nocopyrightsounds.co.uk/)
+- [ZapSplat](https://www.zapsplat.com/sound-effect-categories/)
+- [FreeSound](https://freesound.org/)
 
 ### Blogs and Content
-- Codrops UI Demos - https://tympanus.net/codrops/
-- TutorialZine - https://tutorialzine.com/
-- Invision UX - https://www.invisionapp.com/blog
+- [Codrops UI Demos](https://tympanus.net/codrops/)
+- [TutorialZine](https://tutorialzine.com/)
+- [Invision UX](https://www.invisionapp.com/blog)
