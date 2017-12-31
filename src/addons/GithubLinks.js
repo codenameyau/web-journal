@@ -12,13 +12,19 @@ const Container = styled.div`
 
 const GithubIcon = styled.div`
   position: absolute;
-  top: 1em;
-  right: 1em;
+  top: 1.2em;
+  right: 1.2em;
   background: url(${OctocatSVG});
   background-repeat: no-repeat;
   background-size: cover;
   height: 5em;
   width: 5em;
+  transition: transform .3s;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(45deg);
+  }
 `;
 
 const GithubLinkContainer = styled.div`

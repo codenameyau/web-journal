@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-  withKnobs, text, boolean, number
+  withKnobs, color, boolean, number
 } from '@storybook/addon-knobs/react';
 
 import WinterNight from 'assets/bg/winter-night.jpg';
@@ -9,26 +9,37 @@ import Background from 'addons/Background';
 import GithubLinks from 'addons/GithubLinks';
 import Snow from 'components/Snow';
 
-const getBackgroundColor = () => {
-  // TODO: Dynamically change bg color based on time of day.
-  return '#4f98de';
-};
-
 const stories = storiesOf('Snow', module);
 
 stories.addDecorator(withKnobs);
 
 stories.add('demo', () => (
   <Background background={`url(${WinterNight})`}>
-    <Snow particles={40} maxRadius={3} color="rgba(255, 255, 255, 0.1)" />
+    <Snow
+      color="rgba(255, 255, 255, 0.1)"
+      particles={40}
+      maxRadius={3}
+    />
   </Background>
 ));
 
-stories.add('interactive', () => (
-  <Background background={getBackgroundColor()}>
-    <Snow />
-  </Background>
-));
+stories.add('interactive', () => {
+  const numberOptions = {
+    range: true,
+    min: 1,
+    max: 60,
+    step: 1
+  };
+
+  return (
+    <Background background={color('BG Color', '#4f98de')}>
+      <Snow
+        color={color('Color', 'rgba(255, 255, 255, 0.25)')}
+        particles={number('Particles', 20, numberOptions)}
+      />
+    </Background>
+  )
+});
 
 stories.add('source code', () => (
   <GithubLinks

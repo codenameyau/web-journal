@@ -6,14 +6,8 @@ export const clamp = (num, min, max) => {
   return Math.max(Math.min(num, max), min);
 };
 
-export const randomInclusive = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
-export const randomNormal = (min, max) => {
-  var valueA = randomInclusive(min, max);
-  var valueB = randomInclusive(min, max);
-  return parseInt((valueA + valueB) / 2, 10);
+export const pickRandomly = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
 };
 
 const CavasContainer = styled.div`
@@ -35,9 +29,10 @@ export class SnowCanvas extends React.Component {
     this._color = 'rgba(255, 255, 255, 0.25)';
 
     this.particles = [];
-    this.angle = 0; // wind oscillation
-    this.maxWind = 5; // wind strength
-    this.wind = randomNormal(0, this.maxWind); // wind factor
+    this.oscillation = 0.01; // wind oscillation factor
+    this.angle = 0; // wind oscillation step
+    this.winds = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 5];
+    this.wind = pickRandomly(this.winds);
 
     this.resize = this.resize.bind(this);
     this.reset = this.reset.bind(this);
@@ -71,6 +66,8 @@ export class SnowCanvas extends React.Component {
     const minRadius = this.props.minRadius || this._minRadius;
     const maxRadius = this.props.maxRadius || this._maxRadius;
 
+    this.particles = [];
+
     for (var i=0; i < maxParticles; i++) {
       const radius = clamp(Math.random() * maxRadius, minRadius, maxRadius);
 
@@ -101,13 +98,12 @@ export class SnowCanvas extends React.Component {
     if (!this.canvas) { return; }
 
     const {width, height} = this.canvas;
-
     // Completed one full wind oscillation.
     if (this.angle > this._360Deg) {
-      this.wind = randomNormal(0, this.maxWind);
+      this.wind = pickRandomly(this.winds);
       this.angle = 0;
     } else {
-      this.angle += Math.random() * 0.01; // wind oscillation factor
+      this.angle += Math.random() * this.oscillation;
     }
 
     this.particles.forEach((particle) => {
@@ -153,7 +149,6 @@ export class SnowCanvas extends React.Component {
 }
 
 SnowCanvas.propTypes = {
-  particles: PropTypes.number,
   minRadius: PropTypes.number,
   maxRadius: PropTypes.number,
   color: PropTypes.string,
