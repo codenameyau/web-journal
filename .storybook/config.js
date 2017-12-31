@@ -2,6 +2,17 @@ import { configure } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 import './config.css';
 
+// Automatically include every file found in directory.
+const req = require.context('../stories', true, /\.stories.js$/);
+
+function loadStories() {
+  // Import these stories first in order.
+  require('../stories/Snow.stories.js');
+
+  // Import the remaining stories.
+  req.keys().forEach(req);
+}
+
 setOptions({
   /**
    * name to display in the top left corner
@@ -71,12 +82,5 @@ setOptions({
    */
   selectedAddonPanel: undefined, // The order of addons in the "Addon panel" is the same as you import them in 'addons.js'. The first panel will be opened by default as you run Storybook
 });
-
-// Automatically include every file found in directory.
-const req = require.context('../stories', true, /\.stories.js$/);
-
-function loadStories() {
-  req.keys().forEach(req);
-}
 
 configure(loadStories, module);
