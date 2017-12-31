@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import OctocatSVG from '../assets/svg/octocat.svg';
+import OctocatSVG from '../assets/icon/octocat.svg';
 
 const REPO_LINK = 'https://github.com/codenameyau/web-components/blob/master/';
 
