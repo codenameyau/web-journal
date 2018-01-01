@@ -1,9 +1,12 @@
 # web-components
 
-Installation and Setup
+https://codenameyau.github.io/web-components
+
+### Installation and Setup
 ```
 npm install
 npm run storybook
+npm run deploy
 ```
 
 ## Table of Contents
