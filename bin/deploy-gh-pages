@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# You must run this script from the project root.
+#
+# Usage:
+# npm run deploy
+#
+
+# Sync master for deployment and prepare staging branch.
+git checkout master
+git pull
+git checkout -B gh-pages-staging
+
+# Build storybook-static for staging and push to gh-pages.
+npm run build-storybook
+git add -f storybook-static/
+git commit -m "Add storybook-static for GH pages"
+git subtree push --prefix storybook-static origin gh-pages
+
+# Clean up branches and files.
+git checkout master
+git branch -D gh-pages-staging

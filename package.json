@@ -17,7 +17,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "export NODE_PATH=src && start-storybook -p 9009 -s public",
-    "build-storybook": "export NODE_PATH=src && build-storybook -s public"
+    "build-storybook": "export NODE_PATH=src && build-storybook -s public",
+    "deploy": "./bin/deploy-gh-pages"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.2.19",
