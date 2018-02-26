@@ -1,7 +1,7 @@
 # web-components
 
-- [Storybook](https://codenameyau.github.io/web-components)
-- [Web Resources](https://github.com/codenameyau/web-components/blob/master/RESOURCES.md)
+- [Web Components Storybook](https://codenameyau.github.io/web-components)
+- [Web Resources and Links](https://github.com/codenameyau/web-components/blob/master/RESOURCES.md)
 
 ### Installation and Setup
 ```bash
@@ -10,7 +10,7 @@ npm run storybook
 npm run deploy
 ```
 
-## Table of Contents
+## Code Snippets
 
 - [Styled Components with React CSSTransition](#styled-components-with-react-csstransition)
 
@@ -51,3 +51,4 @@ export const Fade = CSSTransitionFactory(FadeCSSTransition, 'fade');
   <Component />
 </Fade>
 ```
+
