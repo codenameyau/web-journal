@@ -1,75 +1,53 @@
 # web-components
 
-https://codenameyau.github.io/web-components
+- [Storybook](https://codenameyau.github.io/web-components)
+- [Web Resources](https://github.com/codenameyau/web-components/blob/master/RESOURCES.md)
 
 ### Installation and Setup
-```
+```bash
 npm install
 npm run storybook
 npm run deploy
 ```
 
 ## Table of Contents
-- [React Checklist](#react-checklist)
-- [High Res Stock Photos](#stock-photos)
-- [Responsive Website Templates](#templates)
-- [SVG, PNG, ICO Icons](#icons)
-- [Fonts](#fonts)
-- [Color Palettes](#colors)
-- [Background Patterns](#backgrounds)
-- [Sound and Music](#sounds)
-- [Web Development Blogs](#blogs)
 
-### React Checklist
-- [Awesome React](https://github.com/enaqx/awesome-react) - The awesome react list
-- [CreateReactApp](https://github.com/facebookincubator/create-react-app) - Starting new app
-- [Webpack](https://github.com/webpack/webpack) - Module loader and bundler
-- [Babel](https://github.com/babel/babel) - Transpiler for next generation js
-- [Redux](https://github.com/reactjs/redux) - Predictable state management
-- [Redux DevTools](https://github.com/gaearon/redux-devtools) - Redux inspection extension
-- [Styled Components](https://github.com/styled-components/styled-components) - Combine components with css
-- [React Router](https://github.com/ReactTraining/react-router) - Declarative routing
-- [Storybook](https://github.com/storybooks/storybook) - Isolated component development and testing
-- [Ramda](https://github.com/ramda/ramda) - Pure utility functions
-- [Razzle](https://github.com/jaredpalmer/razzle) - Easy server side rendering
-- [React Select](https://github.com/JedWatson/react-select) - Select 2 component
-- [Why Did You Update](https://github.com/maicki/why-did-you-update) - Logs unnecessary render
-- [Proptypes](https://github.com/facebook/prop-types) - Prop validation
+- [Styled Components with React CSSTransition](#styled-components-with-react-csstransition)
 
-### Stock Photos
-- [StockSnap](https://stocksnap.io/)
-- [Pixabay](https://pixabay.com/)
-- [The Stocks](http://thestocks.im)
-- [Gratisography](https://gratisography.com/)
-- [Unsplash](https://unsplash.com/)
+### React CSSTransition with Styled Components
 
-### Templates
-- [HTML5 Up](https://html5up.net/)
-- [Start Bootstrap](https://startbootstrap.com/)
-- [SquareSpace Templates](https://www.squarespace.com/templates/)
+```javascript
+import React from 'react';
+import styled from 'styled-components';
+import { CSSTransition } from 'react-transition-group';
 
-### Icons
-- [ShareIcon](https://www.shareicon.net/)
-- [DryIcons](http://dryicons.com/)
-- [FindIcons](http://findicons.com/pack)
+const CSSTransitionFactory = (Transition, transitionName) => {
+  return ({ children, ...props }) => {
+    return (
+      <Transition classNames={transitionName} {...props} timeout={props.timeout || 0}>
+        {children}
+      </Transition>
+    )
+  }
+};
 
-### Fonts
-- [Google Fonts](https://fonts.google.com/)
-- [FFonts](https://www.ffonts.net/)
+const FadeCSSTransition = styled(CSSTransition)`
+  transition: opacity ${({ duration }) => duration || 1000}ms;
 
-### Colors
-- [FlatUI Colors](http://flatuicolors.com/)
-- [MaterialUI Colors](http://materialuicolors.co)
+  &.fade-enter {
+    opacity: 0.01;
+  }
 
-### Backgrounds
-- [SubtlePatterns](https://www.toptal.com/designers/subtlepatterns/)
+  &.fade-enter-active {
+    opacity: 1;
+  }
+`;
 
-### Sounds
-- [NCS NoCopyrightSounds](http://nocopyrightsounds.co.uk/)
-- [ZapSplat](https://www.zapsplat.com/sound-effect-categories/)
-- [FreeSound](https://freesound.org/)
+export const Fade = CSSTransitionFactory(FadeCSSTransition, 'fade');
+```
 
-### Blogs and Content
-- [Codrops UI Demos](https://tympanus.net/codrops/)
-- [TutorialZine](https://tutorialzine.com/)
-- [Invision UX](https://www.invisionapp.com/blog)
+```javascript
+<Fade key={tweet.messageId} duration={1000} timeout={0}>
+  <Component />
+</Fade>
+```
