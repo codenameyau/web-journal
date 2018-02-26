@@ -12,7 +12,7 @@ npm run deploy
 
 ## Code Snippets
 
-- [Styled Components with React CSSTransition](#styled-components-with-react-csstransition)
+- [React CSSTransition with Styled Components](#react-csstransition-with-styled-components)
 
 ### React CSSTransition with Styled Components
 
