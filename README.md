@@ -12,8 +12,8 @@ npm run deploy
 
 ## Code Snippets
 
-- [React CSSTransition with Styled Components](#react-csstransition-with-styled-components)
 - [Webpack Config](#webpack-config)
+- [Styled Components with CSSTransition](#styled-components-with-csstransition)
 
 ### Webpack Config
 ```js
@@ -82,7 +82,7 @@ module.exports = {
 };
 ```
 
-### React CSSTransition with Styled Components
+### Styled Components with CSSTransition
 
 ```javascript
 import React from 'react';
