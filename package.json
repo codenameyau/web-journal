@@ -21,10 +21,11 @@
     "deploy": "./bin/deploy-gh-pages"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.19",
-    "@storybook/addon-knobs": "^3.3.2",
-    "@storybook/addon-links": "^3.2.19",
-    "@storybook/addon-options": "^3.3.2",
-    "@storybook/react": "^3.2.19"
+    "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-knobs": "^3.4.10",
+    "@storybook/addon-links": "^3.4.10",
+    "@storybook/addon-options": "^3.4.10",
+    "@storybook/addons": "^3.4.10",
+    "@storybook/react": "^3.4.10"
   }
 }
