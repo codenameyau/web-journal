@@ -1,12 +1,12 @@
-# web-components
+# web-journal
 
-- Website: https://codenameyau.github.io/web-components
-- Web Resources: https://github.com/codenameyau/web-components/blob/master/docs/web-resources.md
-- Styled Components: https://github.com/codenameyau/web-components/blob/master/docs/styled-components.md
-- Webpack: https://github.com/codenameyau/web-components/blob/master/docs/webpack.md
+- Website: https://codenameyau.github.io/web-journal
+- Web Resources: https://github.com/codenameyau/web-journal/blob/master/docs/web-resources.md
+- Styled Components: https://github.com/codenameyau/web-journal/blob/master/docs/styled-components.md
+- Webpack: https://github.com/codenameyau/web-journal/blob/master/docs/webpack.md
 
 ## Table of Contents
-- [web-components](#web-components)
+- [web-journal](#web-journal)
   - [Table of Contents](#table-of-contents)
   - [Commands](#commands)
   - [Code Snippets](#code-snippets)
