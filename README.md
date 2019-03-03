@@ -11,7 +11,9 @@
   - [Commands](#commands)
   - [Console Tricks](#console-tricks)
     - [Copy variables to clipboard](#copy-variables-to-clipboard)
-    - [Access global and third-party variables.](#access-global-and-third-party-variables)
+    - [See all event listeners](#see-all-event-listeners)
+    - [Grab all images from a page](#grab-all-images-from-a-page)
+    - [Access third-party variables](#access-third-party-variables)
 
 ## Commands
 ```bash
@@ -29,13 +31,28 @@ yarn deploy
 
 ### Copy variables to clipboard
 ```js
+// Copy variable.
 copy(temp1)
 
 // Copy JSON object.
 copy(JSON.stringify(temp1))
 ```
 
-### Access global and third-party variables.
+### See all event listeners
+```js
+getEventListeners(document)
+
+copy(getEventListeners(document))
+```
+
+### Grab all images from a page
+```js
+Array.from(document.images).map(img => img.src)
+
+copy(Array.from(document.images).map(img => img.getAttribute('src')).filter(img => !!img))
+```
+
+### Access third-party variables
 ```
 window.frames
 ```
