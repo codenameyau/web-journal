@@ -30,7 +30,7 @@ const LinkContainer = styled.div`
   margin-bottom: 1.2em;
 `;
 
-const H2 = styled.h2`
+const H3 = styled.h3`
   text-transform: capitalize;
 `;
 
@@ -39,10 +39,10 @@ export const GithubLink = (props) => {
     <Container>
       <Content>
         <LinkContainer>
-          <H2>
+          <H3>
             <GithubIcon />
             {props.name}
-          </H2>
+          </H3>
           <a target="_blank" rel="noopener noreferrer" href={props.url}>
             {props.url}
           </a>

@@ -1,19 +1,28 @@
 # web-components
 
+- Website: https://codenameyau.github.io/web-components
 - [Web Components Storybook](https://codenameyau.github.io/web-components)
 - [Web Resources and Links](https://github.com/codenameyau/web-components/blob/master/RESOURCES.md)
 
-### Installation and Setup
+- [web-components](#web-components)
+    - [Commands](#commands)
+  - [Code Snippets](#code-snippets)
+    - [Webpack Config](#webpack-config)
+    - [Styled Components with CSSTransition](#styled-components-with-csstransition)
+
+### Commands
 ```bash
-npm install
-npm run storybook
-npm run deploy
+# Install dependencies.
+yarn install
+
+# Starts the storybook app.
+yarn storybook
+
+# Deploys updates on master to gh-pages.
+yarn deploy
 ```
 
 ## Code Snippets
-
-- [Webpack Config](#webpack-config)
-- [Styled Components with CSSTransition](#styled-components-with-csstransition)
 
 ### Webpack Config
 ```js
