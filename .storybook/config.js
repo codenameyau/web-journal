@@ -3,11 +3,11 @@ import { setOptions } from '@storybook/addon-options';
 import './config.css';
 
 // Automatically include every file found in directory.
-const req = require.context('../stories', true, /\.stories.js$/);
+const req = require.context('../src/components', true, /\.stories.js$/);
 
 function loadStories() {
   // Import these stories first in order.
-  require('../stories/Snow.stories.js');
+  require('../src/components/Snow/Snow.stories.js');
 
   // Import the remaining stories.
   req.keys().forEach(req);

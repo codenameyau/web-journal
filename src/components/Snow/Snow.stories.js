@@ -7,7 +7,7 @@ import {
 import WinterNight from 'assets/bg/winter-night.jpg';
 import Background from 'addons/Background';
 import GithubLinks from 'addons/GithubLinks';
-import Snow from 'components/Snow';
+import Snow from 'components/Snow/Snow';
 
 const stories = storiesOf('Snow', module);
 
@@ -43,7 +43,6 @@ stories.add('interactive', () => {
 
 stories.add('source code', () => (
   <GithubLinks
-    snow="src/components/Snow.js"
-    stories="stories/Snow.stories.js"
+    snow="src/components/Snow"
   />
 ));
