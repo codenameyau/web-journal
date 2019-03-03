@@ -9,7 +9,9 @@
 - [web-journal](#web-journal)
   - [Table of Contents](#table-of-contents)
   - [Commands](#commands)
-  - [Code Snippets](#code-snippets)
+  - [Console Tricks](#console-tricks)
+    - [Copy variables to clipboard](#copy-variables-to-clipboard)
+    - [Access global and third-party variables.](#access-global-and-third-party-variables)
 
 ## Commands
 ```bash
@@ -23,4 +25,17 @@ yarn storybook
 yarn deploy
 ```
 
-## Code Snippets
+## Console Tricks
+
+### Copy variables to clipboard
+```js
+copy(temp1)
+
+// Copy JSON object.
+copy(JSON.stringify(temp1))
+```
+
+### Access global and third-party variables.
+```
+window.frames
+```
