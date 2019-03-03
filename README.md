@@ -1,16 +1,21 @@
 # web-components
 
-- Website: https://codenameyau.github.io/web-components
-- [Web Components Storybook](https://codenameyau.github.io/web-components)
-- [Web Resources and Links](https://github.com/codenameyau/web-components/blob/master/RESOURCES.md)
+Website: https://codenameyau.github.io/web-components
 
+## Table of Contents
 - [web-components](#web-components)
-    - [Commands](#commands)
+  - [Table of Contents](#table-of-contents)
+  - [Links](#links)
+  - [Commands](#commands)
   - [Code Snippets](#code-snippets)
     - [Webpack Config](#webpack-config)
     - [Styled Components with CSSTransition](#styled-components-with-csstransition)
 
-### Commands
+## Links
+- [Web Components Storybook](https://codenameyau.github.io/web-components)
+- [Web Resources and Links](https://github.com/codenameyau/web-components/blob/master/RESOURCES.md)
+
+## Commands
 ```bash
 # Install dependencies.
 yarn install
