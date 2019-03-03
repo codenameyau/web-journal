@@ -48,7 +48,7 @@ setOptions({
    * show addon panel as a vertical panel on the right
    * @type {Boolean}
    */
-  addonPanelInRight: false,
+  addonPanelInRight: true,
   /**
    * show panel on the right instead of bottom
    * @type {Boolean}

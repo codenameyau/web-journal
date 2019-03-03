@@ -12,29 +12,26 @@ const Container = styled.div`
 `;
 
 const GithubIcon = styled.div`
+  display: inline-block;
+  vertical-align: text-top;
   background: url(${OctocatSVG});
   background-repeat: no-repeat;
   background-size: cover;
-  height: 3.5em;
-  width: 3.5em;
-  transition: transform 0.3s;
+  height: 1em;
+  width: 1em;
   cursor: pointer;
-  margin-bottom: 1em;
-
-  &:hover {
-    transform: rotate(30deg);
-  }
+  margin-right: 0.25em;
 `;
 
 const Content = styled.div`
-  padding: 1.2em;
+  padding: 1em;
 `;
 
 const LinkContainer = styled.div`
   margin-bottom: 1.2em;
 `;
 
-const H3 = styled.h3`
+const H2 = styled.h2`
   text-transform: capitalize;
 `;
 
@@ -42,7 +39,10 @@ export const GithubLinks = (props) => {
   const showLink = (propName) => (
     props[propName] &&
     <LinkContainer key={propName}>
-      <H3>{propName}</H3>
+      <H2>
+        <GithubIcon />
+        {propName}
+      </H2>
       <a target="_blank" href={REPO_LINK + props[propName]}>
         {REPO_LINK + props[propName]}
       </a>
@@ -52,7 +52,6 @@ export const GithubLinks = (props) => {
   return (
     <Container>
       <Content>
-        <GithubIcon />
         {Object.keys(props).map((key) => showLink(key))}
       </Content>
     </Container>
