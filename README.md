@@ -2,6 +2,8 @@
 
 - Website: https://codenameyau.github.io/web-components
 - Web Resources: https://github.com/codenameyau/web-components/blob/master/docs/web-resources.md
+- Styled Components: https://github.com/codenameyau/web-components/blob/master/docs/styled-components.md
+- Webpack: https://github.com/codenameyau/web-components/blob/master/docs/webpack.md
 
 ## Table of Contents
 - [web-components](#web-components)
