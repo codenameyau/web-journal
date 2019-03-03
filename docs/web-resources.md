@@ -1,13 +1,14 @@
-# Table of Contents
-- [React Checklist](#react-checklist)
-- [High Res Stock Photos](#stock-photos)
-- [Responsive Website Templates](#templates)
-- [SVG, PNG, ICO Icons](#icons)
-- [Fonts](#fonts)
-- [Color Palettes](#colors)
-- [Background Patterns](#backgrounds)
-- [Sound and Music](#sounds)
-- [Web Development Blogs](#blogs)
+# Web Resources
+- [Web Resources](#web-resources)
+    - [React Checklist](#react-checklist)
+    - [Stock Photos](#stock-photos)
+    - [Templates](#templates)
+    - [Icons](#icons)
+    - [Fonts](#fonts)
+    - [Colors](#colors)
+    - [Backgrounds](#backgrounds)
+    - [Sounds](#sounds)
+    - [Blogs and Content](#blogs-and-content)
 
 ### React Checklist
 - [Awesome React](https://github.com/enaqx/awesome-react) - The awesome react list
