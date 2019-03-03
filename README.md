@@ -42,6 +42,7 @@ copy(JSON.stringify(temp1))
 ```js
 getEventListeners(document)
 
+// JSON format.
 copy(getEventListeners(document))
 ```
 
@@ -49,7 +50,11 @@ copy(getEventListeners(document))
 ```js
 Array.from(document.images).map(img => img.src)
 
+// JSON format.
 copy(Array.from(document.images).map(img => img.getAttribute('src')).filter(img => !!img))
+
+// List format.
+copy(Array.from(document.images).reduce((acc, img) => acc + img.src + '\n', ''))
 ```
 
 ### Access third-party variables
