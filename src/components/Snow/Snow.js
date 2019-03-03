@@ -53,9 +53,10 @@ export class SnowCanvas extends React.Component {
     this._wind = pickRandomly(this._winds);
 
     this.resize = this.resize.bind(this);
-    this.reset = this.reset.bind(this);
+    this.initialize = this.initialize.bind(this);
     this.draw = this.draw.bind(this);
     this.update = this.update.bind(this);
+    this.animate = this.animate.bind(this);
   }
 
   componentDidMount() {
@@ -63,6 +64,9 @@ export class SnowCanvas extends React.Component {
     this.canvas.height = window.innerHeight;
 
     window.addEventListener('resize', this.resize, false);
+
+    this.initialize();
+    this.animate();
   }
 
   componentWillUnmount() {
@@ -70,8 +74,7 @@ export class SnowCanvas extends React.Component {
     window.cancelAnimationFrame(this._animationId);
   }
 
-  componentDidUpdate() {
-    this.reset();
+  animate() {
     this.draw();
     this.update();
   }
@@ -82,7 +85,7 @@ export class SnowCanvas extends React.Component {
     this.draw();
   }
 
-  reset() {
+  initialize() {
     const { particles, minRadius, maxRadius } = this.props;
     window.cancelAnimationFrame(this._animationId);
     this._particles.length = 0;
