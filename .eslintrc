@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "warn",
+    "curly": "off",
+    "react/display-name": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": [
+          "!styled-components/macro"
+        ]
+      }
+    ]
+  }
+}

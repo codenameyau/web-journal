@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import styled from 'styled-components/macro';
 
 import OctocatSVG from '../assets/icon/octocat.svg';
-
-const REPO_LINK = 'https://github.com/codenameyau/web-components/blob/master/';
 
 const Container = styled.div`
   position: relative;
@@ -35,27 +34,31 @@ const H2 = styled.h2`
   text-transform: capitalize;
 `;
 
-export const GithubLinks = (props) => {
-  const showLink = (propName) => (
-    props[propName] &&
-    <LinkContainer key={propName}>
-      <H2>
-        <GithubIcon />
-        {propName}
-      </H2>
-      <a target="_blank" href={REPO_LINK + props[propName]}>
-        {REPO_LINK + props[propName]}
-      </a>
-    </LinkContainer>
-  );
-
+export const GithubLink = (props) => {
   return (
     <Container>
       <Content>
-        {Object.keys(props).map((key) => showLink(key))}
+        <LinkContainer>
+          <H2>
+            <GithubIcon />
+            {props.name}
+          </H2>
+          <a target="_blank" rel="noopener noreferrer" href={props.url}>
+            {props.url}
+          </a>
+        </LinkContainer>
       </Content>
     </Container>
   );
 };
 
-export default GithubLinks;
+GithubLink.propTypes = {
+  url: PropTypes.string.isRequired,
+  name: PropTypes.string,
+};
+
+GithubLink.defaultProps = {
+  name: 'Source code',
+};
+
+export default GithubLink;

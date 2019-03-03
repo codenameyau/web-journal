@@ -4,13 +4,6 @@
   "main": "index.js",
   "version": "0.1.1",
   "private": true,
-  "dependencies": {
-    "prop-types": "^15.6.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.1",
-    "styled-components": "^4.1.2"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -19,6 +12,14 @@
     "storybook": "export NODE_PATH=src && start-storybook -p 9009 -s public",
     "build-storybook": "export NODE_PATH=src && build-storybook -s public",
     "deploy": "./bin/deploy-gh-pages"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.1",
+    "styled-components": "^4.1.2",
+    "babel-plugin-macros": "^2.5.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^4.1.13",
