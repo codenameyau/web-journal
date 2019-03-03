@@ -10,7 +10,7 @@
 git checkout master
 git pull
 git checkout -B gh-pages-staging
-git branch -d gh-pages
+git branch -D gh-pages
 
 # Build storybook-static for staging and push to gh-pages.
 npm run build-storybook
