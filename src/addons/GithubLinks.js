@@ -17,12 +17,12 @@ const GithubIcon = styled.div`
   background-size: cover;
   height: 3.5em;
   width: 3.5em;
-  transition: transform .3s;
+  transition: transform 0.3s;
   cursor: pointer;
   margin-bottom: 1em;
 
   &:hover {
-    transform: rotate(360deg);
+    transform: rotate(30deg);
   }
 `;
 
