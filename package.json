@@ -22,12 +22,12 @@
     "babel-plugin-macros": "^2.5.0"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^4.1.13",
-    "@storybook/addon-knobs": "^4.1.13",
-    "@storybook/addon-links": "^4.1.13",
-    "@storybook/addon-options": "^4.1.13",
-    "@storybook/addons": "^4.1.13",
-    "@storybook/react": "^4.1.13"
+    "@storybook/addon-actions": "^v5.0.1",
+    "@storybook/addon-knobs": "^v5.0.1",
+    "@storybook/addon-links": "^v5.0.1",
+    "@storybook/addon-options": "^v5.0.1",
+    "@storybook/addons": "^v5.0.1",
+    "@storybook/react": "^v5.0.1"
   },
   "browserslist": [
     ">0.2%",
