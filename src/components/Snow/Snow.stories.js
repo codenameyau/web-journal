@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import {
-  withKnobs, color, boolean, number
+  withKnobs, color, number
 } from '@storybook/addon-knobs/react';
 
 import WinterNight from 'assets/bg/winter-night.jpg';
