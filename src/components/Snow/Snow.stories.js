@@ -7,6 +7,7 @@ import {
 import WinterNight from 'assets/bg/winter-night.jpg';
 import Background from 'addons/Background';
 import GithubLink from 'addons/GithubLink';
+import Description from 'addons/Description';
 import Snow from 'components/Snow/Snow';
 
 const stories = storiesOf('Snow', module);
@@ -44,5 +45,8 @@ stories.add('interactive', () => {
 stories.add('source code', () => (
   <div>
     <GithubLink url="https://github.com/codenameyau/web-components/blob/master/src/components/Snow" />
+    <Description>
+      This was a project that I worked on during Newsela.
+    </Description>
   </div>
 ));

@@ -30,19 +30,15 @@ const LinkContainer = styled.div`
   margin-bottom: 1.2em;
 `;
 
-const H3 = styled.h3`
-  text-transform: capitalize;
-`;
-
 export const GithubLink = (props) => {
   return (
     <Container>
       <Content>
         <LinkContainer>
-          <H3>
+          <h3>
             <GithubIcon />
             {props.name}
-          </H3>
+          </h3>
           <a target="_blank" rel="noopener noreferrer" href={props.url}>
             {props.url}
           </a>
@@ -58,7 +54,7 @@ GithubLink.propTypes = {
 };
 
 GithubLink.defaultProps = {
-  name: 'Source code',
+  name: 'Source Code',
 };
 
 export default GithubLink;
