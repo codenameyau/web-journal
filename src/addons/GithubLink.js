@@ -4,12 +4,6 @@ import styled from 'styled-components/macro';
 
 import OctocatSVG from '../assets/icon/octocat.svg';
 
-const Container = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100vh;
-`;
-
 const GithubIcon = styled.div`
   display: inline-block;
   vertical-align: text-top;
@@ -22,29 +16,23 @@ const GithubIcon = styled.div`
   margin-right: 0.25em;
 `;
 
-const Content = styled.div`
-  padding: 1em;
-`;
-
 const LinkContainer = styled.div`
   margin-bottom: 1.2em;
 `;
 
 export const GithubLink = (props) => {
   return (
-    <Container>
-      <Content>
-        <LinkContainer>
-          <h3>
-            <GithubIcon />
-            {props.name}
-          </h3>
-          <a target="_blank" rel="noopener noreferrer" href={props.url}>
-            {props.url}
-          </a>
-        </LinkContainer>
-      </Content>
-    </Container>
+    <div>
+      <LinkContainer>
+        <h3>
+          <GithubIcon />
+          {props.name}
+        </h3>
+        <a target="_blank" rel="noopener noreferrer" href={props.url}>
+          {props.url}
+        </a>
+      </LinkContainer>
+    </div>
   );
 };
 

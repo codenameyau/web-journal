@@ -5,7 +5,9 @@ import {
   withKnobs, select
 } from '@storybook/addon-knobs/react';
 
+import Container from 'addons/Container';
 import GithubLink from 'addons/GithubLink';
+import Description from 'addons/Description';
 import Clippy from 'components/Clippy/Clippy';
 
 const ClippyContainer = styled.div`
@@ -43,7 +45,10 @@ stories.add('interactive', () => {
 });
 
 stories.add('source code', () => (
-  <div>
+  <Container>
     <GithubLink url="https://github.com/codenameyau/web-components/blob/master/src/components/Clippy" />
-  </div>
+    <Description>
+      This was a project that I worked on during Stash.
+    </Description>
+  </Container>
 ));
