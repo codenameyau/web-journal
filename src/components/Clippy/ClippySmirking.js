@@ -3,11 +3,11 @@ import styled from 'styled-components/macro';
 import { RaiseEyebrows } from './keyframes';
 
 const PathEyebrows = styled.path`
-	&.raise-eyebrows {
-		animation: ${RaiseEyebrows} 2s;
-		animation-iteration-count: infinite;
-		animation-delay: 2s;
-	}
+  &.raise-eyebrows {
+    animation: ${RaiseEyebrows} 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+  }
 `;
 
 export const ClippySmirking = props => {
