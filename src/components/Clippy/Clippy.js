@@ -7,36 +7,36 @@ import ClippySmirking from './ClippySmirking';
 import { Appearing, Pulsating } from './keyframes';
 
 const ClippySVG = styled.svg`
-	cursor: pointer;
-	transition: animation 0.3s ease-out;
+  cursor: pointer;
+  transition: animation 0.3s ease-out;
 
-	&.appearing {
-		animation: ${Appearing};
-		animation-duration: 2s;
-		animation-iteration-count: 1;
-		animation-delay: 0;
-	}
+  &.appearing {
+    animation: ${Appearing};
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-delay: 0;
+  }
 
-	&.smiling {
-		animation: ${Pulsating};
-		animation-duration: 1s;
-		animation-iteration-count: infinite;
-		animation-delay: 0.2s; /* psychological delay */
-	}
+  &.smiling {
+    animation: ${Pulsating};
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s; /* psychological delay */
+  }
 
-	&.smirking {
-		animation: ${Pulsating};
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-		animation-delay: 0;
-	}
+  &.smirking {
+    animation: ${Pulsating};
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+  }
 
-	&.sleeping {
-		animation: ${Pulsating};
-		animation-duration: 3s;
-		animation-iteration-count: infinite;
-		animation-delay: 0;
-	}
+  &.sleeping {
+    animation: ${Pulsating};
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+  }
 `;
 
 export const CLIPPY_STATES = {
