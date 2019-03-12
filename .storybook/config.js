@@ -18,12 +18,12 @@ setOptions({
    * name to display in the top left corner
    * @type {String}
    */
-  name: 'github',
+  name: 'codenameyau / web-journal',
   /**
    * URL for name in top left corner to link to
    * @type {String}
    */
-  url: 'https://github.com/codenameyau/web-components',
+  url: 'https://github.com/codenameyau/web-journal',
   /**
    * show story component as full screen
    * @type {Boolean}
