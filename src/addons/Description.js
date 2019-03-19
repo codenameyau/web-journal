@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components/macro';
 
+const Content = styled.div`
+  line-height: 1.25em;
+`;
 
 export const Description = (props) => {
   return (
@@ -8,9 +12,9 @@ export const Description = (props) => {
       <h3>
         {props.name}
       </h3>
-      <div>
+      <Content>
         {props.children}
-      </div>
+      </Content>
     </div>
   );
 };

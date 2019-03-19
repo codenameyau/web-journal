@@ -48,7 +48,11 @@ stories.add('source code', () => (
   <Container>
     <GithubLink url="https://github.com/codenameyau/web-components/blob/master/src/components/Clippy" />
     <Description>
-      This was a project that I worked on during Stash.
+      This was a project that I worked on during a Stash Hackathon. It uses React
+      with animated SVGs using styled components. Clippy would change states
+      based on how long it took a user to complete a step during registration.
+      If the user took too long, the star would transition from happy to smirking.
+      After a user completed an action the star would transition back to its happiest state.
     </Description>
   </Container>
 ));

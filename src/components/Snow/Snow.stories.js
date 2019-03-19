@@ -47,7 +47,11 @@ stories.add('source code', () => (
   <Container>
     <GithubLink url="https://github.com/codenameyau/web-components/blob/master/src/components/Snow" />
     <Description>
-      This was a project that I worked on during Newsela.
+      This was a project that I worked on during Newsela. The snow was a background
+      effect that we applied to the seasonal registration and login screens. I googled
+      for JavaScript implementations and found that canvas was used most frequently.
+      In order to make the falling motion feel windy and more life-like, I used
+      a sine wave to determine the ebb-and-flow motion of the falling snow particles.
     </Description>
   </Container>
 ));
