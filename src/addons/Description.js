@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 
 const Content = styled.div`
   line-height: 1.25em;
+  max-width: 45em;
 `;
 
 export const Description = (props) => {
