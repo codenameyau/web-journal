@@ -2,7 +2,7 @@
   "name": "@codenameyau/web-components",
   "description": "Reusable web components",
   "main": "index.js",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -15,19 +15,19 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.1",
-    "styled-components": "^4.1.2",
-    "babel-plugin-macros": "^2.5.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "styled-components": "^4.3.2",
+    "babel-plugin-macros": "^2.6.1"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^v5.0.1",
-    "@storybook/addon-knobs": "^v5.0.1",
-    "@storybook/addon-links": "^v5.0.1",
-    "@storybook/addon-options": "^v5.0.1",
-    "@storybook/addons": "^v5.0.1",
-    "@storybook/react": "^v5.0.1"
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-knobs": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addon-options": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9"
   },
   "browserslist": [
     ">0.2%",
