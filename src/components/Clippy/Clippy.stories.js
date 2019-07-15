@@ -8,7 +8,7 @@ import {
 import Container from 'addons/Container';
 import GithubLink from 'addons/GithubLink';
 import Description from 'addons/Description';
-import Clippy from 'src/components';
+import Clippy from 'components/Clippy';
 
 const ClippyContainer = styled.div`
   position: fixed;
