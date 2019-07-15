@@ -23,7 +23,7 @@ setOptions({
    * name to display in the top left corner
    * @type {String}
    */
-  name: 'codenameyau / web-journal',
+  name: '',
   /**
    * URL for name in top left corner to link to
    * @type {String}
