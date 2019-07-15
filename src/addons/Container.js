@@ -1,13 +1,15 @@
 import styled from 'styled-components/macro';
+import { space } from 'styled-system';
 
 export const Container = styled.div`
-  margin: ${({ margin }) => margin};
-  padding: ${({ padding }) => padding};
+  max-width: ${({ maxWidth }) => maxWidth};
+  width: ${({ width }) => width};
+  ${space}
 `;
 
 Container.defaultProps = {
-  margin: '0',
-  padding: '1em',
+  maxWidth: 'none',
+  width: '100%',
 };
 
 export default Container;
