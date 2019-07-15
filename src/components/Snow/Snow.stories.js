@@ -9,7 +9,7 @@ import Background from 'addons/Background';
 import Container from 'addons/Container';
 import GithubLink from 'addons/GithubLink';
 import Description from 'addons/Description';
-import Snow from 'components/Snow/Snow';
+import Snow from 'src/components';
 
 const stories = storiesOf('Snow', module);
 
