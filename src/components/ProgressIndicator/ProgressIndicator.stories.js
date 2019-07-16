@@ -21,7 +21,7 @@ stories.addDecorator(withKnobs);
 
 stories.add('demo', () => (
   <Container maxWidth="250px" mx="auto" width="100%">
-    <ProgressIndicator steps={steps} complete={2} />
+    <ProgressIndicator steps={steps} completed={2} />
   </Container>
 ));
 
