@@ -10,6 +10,7 @@ export const Container = styled.div`
 Container.defaultProps = {
   maxWidth: 'none',
   width: '100%',
+  padding: '1em',
 };
 
 export default Container;

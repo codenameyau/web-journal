@@ -32,15 +32,10 @@ stories.add('interactive', () => (
 ));
 
 stories.add('source code', () => (
-  <Container maxWidth="250px" mx="auto" width="100%">
+  <Container>
     <GithubLink url="https://github.com/codenameyau/web-components/blob/master/src/components/ProgressIndicator" />
     <Description>
-      This was a project that I worked on during a Stash Hackathon. It uses
-      React with animated SVGs using styled components. ProgressIndicator would
-      change states based on how long it took a user to complete a step during
-      registration. If the user took too long, the star would transition from
-      happy to smirking. After a user completed an action the star would
-      transition back to its happiest state.
+      This was a project that I worked on at Stash.
     </Description>
   </Container>
 ));
