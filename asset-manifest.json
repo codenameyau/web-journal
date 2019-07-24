@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/main.css",
+    "main.js": "/main.c7da8c0bbb6c9efdbc8e.bundle.js",
+    "main.css.map": "/main.css.map",
+    "main.js.map": "/main.c7da8c0bbb6c9efdbc8e.bundle.js.map",
+    "runtime~main.js": "/runtime~main.c7da8c0bbb6c9efdbc8e.bundle.js",
+    "runtime~main.js.map": "/runtime~main.c7da8c0bbb6c9efdbc8e.bundle.js.map",
+    "vendors~main.js": "/vendors~main.c7da8c0bbb6c9efdbc8e.bundle.js",
+    "vendors~main.js.map": "/vendors~main.c7da8c0bbb6c9efdbc8e.bundle.js.map",
+    "iframe.html": "/iframe.html",
+    "precache-manifest.0832de5a91d0a30d2fbd6ce6471e8ac1.js": "/precache-manifest.0832de5a91d0a30d2fbd6ce6471e8ac1.js",
+    "service-worker.js": "/service-worker.js",
+    "static/media/octocat.svg": "/static/media/octocat.f5779aab.svg",
+    "static/media/winter-night.jpg": "/static/media/winter-night.2ec6058d.jpg"
+  }
+}
