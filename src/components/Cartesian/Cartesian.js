@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { space } from 'styled-system';
 
 export const CartesianGrid = styled.div`
@@ -44,17 +44,19 @@ export const getCartesianProps = (props = {}) => {
 	});
 };
 
-export const getJSX = (displayName, props = {}) => {
-	const propsAttributes = Object.keys(props).reduce((acc, key) => {
+// TODO: Use third party solution.
+export const getJSX = (displayName, { children, ...props}) => {
+	const propsAttrs = Object.keys(props).reduce((acc, prop) => {
+		const propValue = props[prop];
+		const propAttr = typeof propValue === 'string' ? `"${propValue}"` : `{${propValue}}`;
 
-	}, '');
+		return [
+			...acc,
+			`${prop}=`+ propAttr
+		]
+	}, []);
 
-	const jsx = `
-		<${displayName}>
-			${props.children}
-		</${displayName}>
-	`;
-
+	const jsx = `<${displayName} ${propsAttrs.join(' ')}>${children}</${displayName}>`;
 	return jsx;
 };
 
@@ -64,10 +66,8 @@ export const Cartesian = ({ component, props, ...restProps }) => {
 	const cols = restProps.cols || 4;
 
 	const copyComponent = (e, idx) => {
-		console.log(e, idx, component);
-		console.log(React.renderToStaticMarkup)
-		// cartesianProps(idx);
-		// debugger;
+		const jsx = getJSX(component.displayName, cartesianProps[idx]);
+		navigator.clipboard.writeText(jsx);
 	};
 
 	return (
