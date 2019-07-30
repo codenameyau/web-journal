@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { space } from 'styled-system';
+
 
 export const CartesianGrid = styled.div`
 	display: grid;
 	grid-template-columns: ${({ cols = 4 }) => `repeat(${cols}, 1fr)`};
+	grid-auto-rows: minmax(50px, auto);
 	gap: 0.1em;
 	margin: auto;
 	${space}
@@ -14,6 +16,21 @@ export const CartesianGrid = styled.div`
 export const CartesianGridItem = styled.div`
 	border: 1px solid #eee;
 	padding: 0.5em;
+	cursor: pointer;
+	transition: background 0.5s;
+	position: relative;
+
+	&:active {
+		background: #ddd;
+
+		&::after {
+			content: "Copied";
+			color: #bbb;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
 `;
 
 export const getCartesianProduct = arrays => {
@@ -75,6 +92,7 @@ export const Cartesian = ({ component, props, ...restProps }) => {
 			{cartesianProps.map(({ children, ...cartesianProps }, idx) => (
 				<CartesianGridItem
 					key={idx}
+					title="Click to copy."
 					onClick={e => {
 						copyComponent(e, idx)
 					}}

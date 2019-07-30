@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { colors, fonts, fontWeights } from 'components/_internal/Theme';
 import { ResponsiveContainer } from 'components/_internal/Containers';
 import * as d3 from 'd3';
