@@ -3,33 +3,39 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 
-
 export const CartesianGrid = styled.div`
+	margin: auto;
 	display: grid;
 	grid-template-columns: ${({ cols = 4 }) => `repeat(${cols}, 1fr)`};
 	grid-auto-rows: minmax(50px, auto);
+	justify-items: stretch;
+	align-items: stretch;
 	gap: 0.1em;
-	margin: auto;
 	${space}
 `;
 
 export const CartesianGridItem = styled.div`
 	border: 1px solid #eee;
 	padding: 0.5em;
-	cursor: pointer;
-	transition: background 0.5s;
+	transition: background 0.3s;
 	position: relative;
+	cursor: pointer;
 
-	&:active {
-		background: #ddd;
+	&:hover {
+		background: #eee;
 
 		&::after {
-			content: "Copied";
-			color: #bbb;
+			content: 'Click to copy';
+			font-size: 12px;
+			color: #aaa;
 			position: absolute;
-			top: 0;
-			right: 0;
+			top: 2px;
+			right: 2px;
 		}
+	}
+
+	&:active {
+		background: #bbb;
 	}
 `;
 
@@ -41,7 +47,11 @@ export const getCartesianProduct = arrays => {
 	return arrays.reduce(
 		(acc, value) =>
 			acc
-				.map(x => value.map(y => x.concat(y)))
+				.map(x =>
+					value.map(y => {
+						return Array.isArray(y) ? x.concat([y]) : x.concat(y);
+					})
+				)
 				.reduce((acc, val) => acc.concat(val), []),
 		[[]]
 	);
@@ -61,20 +71,27 @@ export const getCartesianProps = (props = {}) => {
 	});
 };
 
-// TODO: Use third party solution.
-export const getJSX = (displayName, { children, ...props}) => {
-	const propsAttrs = Object.keys(props).reduce((acc, prop) => {
-		const propValue = props[prop];
-		const propAttr = typeof propValue === 'string' ? `"${propValue}"` : `{${propValue}}`;
+// TODO: add formatting.
+export const getJSX = (Component, { children, ...props }) => {
+	const name = Component.type.displayName || Component.type.name;
 
-		return [
-			...acc,
-			`${prop}=`+ propAttr
-		]
+	const propsAttrs = Object.keys(props).reduce((acc, prop) => {
+		const propValue =
+			typeof props[prop] === 'object'
+				? JSON.stringify(props[prop])
+				: props[prop];
+
+		const propAttr =
+			typeof props[prop] === 'string' ? `"${propValue}"` : `{${propValue}}`;
+
+		return [...acc, `${prop}=` + propAttr];
 	}, []);
 
-	const jsx = `<${displayName} ${propsAttrs.join(' ')}>${children}</${displayName}>`;
-	return jsx;
+	const propsString = propsAttrs.join(' ');
+
+	return children
+		? `<${name} ${propsString}>${children}</${name}>`
+		: `<${name} ${propsString} />`;
 };
 
 export const Cartesian = ({ component, props, ...restProps }) => {
@@ -83,7 +100,7 @@ export const Cartesian = ({ component, props, ...restProps }) => {
 	const cols = restProps.cols || 4;
 
 	const copyComponent = (e, idx) => {
-		const jsx = getJSX(component.displayName, cartesianProps[idx]);
+		const jsx = getJSX(<Component />, cartesianProps[idx]);
 		navigator.clipboard.writeText(jsx);
 	};
 
@@ -92,9 +109,8 @@ export const Cartesian = ({ component, props, ...restProps }) => {
 			{cartesianProps.map(({ children, ...cartesianProps }, idx) => (
 				<CartesianGridItem
 					key={idx}
-					title="Click to copy."
 					onClick={e => {
-						copyComponent(e, idx)
+						copyComponent(e, idx);
 					}}
 				>
 					<Component {...cartesianProps}>{children}</Component>
