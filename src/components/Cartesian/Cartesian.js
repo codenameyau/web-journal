@@ -10,6 +10,7 @@ export const CartesianGrid = styled.div`
   grid-auto-rows: minmax(50px, auto);
   justify-items: stretch;
   align-items: stretch;
+  background: ${({ background }) => background};
   gap: 0.1em;
   ${space}
 `;
@@ -120,7 +121,7 @@ export const getJSX = (Component, { children, ...props }) => {
 export const Cartesian = ({ component, props, ...restProps }) => {
   const Component = component;
   const cartesianProps = getCartesianProps(props);
-  const { cols, showProps } = restProps;
+  const { cols, showProps, background } = restProps;
 
   const copyComponent = (e, idx) => {
     const jsx = getJSX(<Component />, cartesianProps[idx]);
@@ -128,7 +129,7 @@ export const Cartesian = ({ component, props, ...restProps }) => {
   };
 
   return (
-    <CartesianGrid cols={cols}>
+    <CartesianGrid cols={cols} background={background}>
       {cartesianProps.map(({ children, ...restCartesianProps }, idx) => (
         <CartesianGridItem
           key={idx}
@@ -150,11 +151,13 @@ Cartesian.propTypes = {
   props: PropTypes.object,
   cols: PropTypes.number,
   showProps: PropTypes.bool,
+  background: PropTypes.string,
 };
 
 Cartesian.defaultProps = {
   cols: 4,
   showProps: false,
+  background: 'none',
 };
 
 export default Cartesian;
