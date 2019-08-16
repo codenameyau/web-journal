@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { number } from '@storybook/addon-knobs';
 
-import Cartesian from '../Cartesian/Cartesian';
+import Cartesian from '../Cartesian';
 import Container from 'addons/Container';
 import GithubLink from 'addons/GithubLink';
 import Description from 'addons/Description';

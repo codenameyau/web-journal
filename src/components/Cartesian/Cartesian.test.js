@@ -1,6 +1,6 @@
 import React from 'react';
-import VerticalProgressBar from '../VerticalProgressBar/VerticalProgressBar';
-import { getCartesianProduct, getCartesianProps, getJSX } from './Cartesian';
+import VerticalProgressBar from '../VerticalProgressBar';
+import { getCartesianProduct, getCartesianProps, getJSX } from './index';
 
 describe('getCartesianProduct', () => {
   it('should return empty array for empty array input', () => {
