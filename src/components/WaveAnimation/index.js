@@ -5,19 +5,27 @@ import waveImage from './wave.png';
 
 const Container = styled.div`
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 `;
 
 export const MoveLeft = keyframes`
   0% {
-    transform: translateX(0);
+    background-position: 1360px;
   }
 
   100% {
-    transform: translateX(1360px);
+    background-position: 0;
+  }
+`;
+
+export const MoveRight = keyframes`
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 1360px;
   }
 `;
 
@@ -25,11 +33,11 @@ const Wave = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  background: url(${waveImage}) repeat-x;
-  height: 100%;
+  height: 143px;
   width: 100%;
-  animation: ${MoveLeft};
-  animation-iteration-count: infinite;
+  background: url(${waveImage}) repeat-x;
+  opacity: ${({ opacity }) => opacity || 1};
+  animation: ${({ animation }) => animation || MoveLeft } 10s linear infinite;
 `;
 
 
@@ -47,7 +55,8 @@ export class WaveAnimation extends React.Component {
   render() {
     return (
       <Container>
-        <Wave />
+        <Wave animation={MoveRight} opacity=".75" />
+        <Wave animation={MoveLeft} opacity=".5" />
       </Container>
     );
   }
