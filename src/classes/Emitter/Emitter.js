@@ -7,6 +7,10 @@ export class Emitter {
     this.events.set(event, callback);
   }
 
+  unsubscribe(event) {
+    this.events.delete(event);
+  }
+
   emit(event, ...args) {
     const callback = this.events.get(event);
     if (callback && typeof callback === 'function') {
@@ -14,13 +18,5 @@ export class Emitter {
     }
   }
 }
-
-const emitter = new Emitter();
-
-emitter.subscribe('hello', (name) => {
-  console.log(`hello ${name}`);
-});
-
-emitter.emit('hello', 'world');
 
 export default Emitter;
