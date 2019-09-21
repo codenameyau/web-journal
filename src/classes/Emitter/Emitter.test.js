@@ -15,20 +15,27 @@ describe('Emitter', () => {
     emitter = new Emitter();
   });
 
+  it('should contain method: emit', () => {
+    const spy = jest.spyOn(emitter, 'emit');
+    emitter.subscribe('hello', handler);
+    emitter.emit('hello', 'world', 'how', 'are', 'you');
+    expect(spy).toBeCalledWith('hello', 'world', 'how', 'are', 'you');
+  });
+
   it('should contain method: subscribe', () => {
-    const subscribeSpy = jest.spyOn(emitter, 'subscribe');
+    const spy = jest.spyOn(emitter, 'subscribe');
 
     emitter.subscribe('hello', handler);
-    expect(subscribeSpy).toHaveBeenCalledWith('hello', handler);
+    expect(spy).toBeCalledWith('hello', handler);
     expect(emitter.events.get('hello')).toBe(handler);
   });
 
   it('should handle subscribing to the same event', () => {
-    const subscribeSpy = jest.spyOn(emitter, 'subscribe');
+    const spy = jest.spyOn(emitter, 'subscribe');
 
     emitter.subscribe('hello', handler);
     emitter.subscribe('hello', handler2);
-    expect(subscribeSpy).toHaveBeenCalledWith('hello', handler2);
+    expect(spy).toBeCalledWith('hello', handler2);
     expect(emitter.events.get('hello')).toBe(handler2);
   });
 
@@ -37,13 +44,13 @@ describe('Emitter', () => {
 
     emitter.subscribe('hello', handler);
     emitter.unsubscribe('hello');
-    expect(spy).toHaveBeenCalledWith('hello');
+    expect(spy).toBeCalledWith('hello');
   });
 
   it('should handle unsubscribe when not already subscribed', () => {
     const spy = jest.spyOn(emitter, 'unsubscribe');
 
     emitter.unsubscribe('hello');
-    expect(spy).toHaveBeenCalledWith('hello');
+    expect(spy).toBeCalledWith('hello');
   });
 });
