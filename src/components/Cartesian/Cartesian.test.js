@@ -1,5 +1,5 @@
 import React from 'react';
-import VerticalProgressBar from '../VerticalProgressBar/VerticalProgressBar';
+import VerticalProgressBar from '../VerticalProgressBar';
 import { getCartesianProduct, getCartesianProps, getJSX } from './Cartesian';
 
 describe('getCartesianProduct', () => {

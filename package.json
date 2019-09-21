@@ -13,6 +13,9 @@
     "build-storybook": "export NODE_PATH=src && build-storybook -s public",
     "deploy": "./bin/deploy-gh-pages"
   },
+  "jest": {
+    "verbose": true
+  },
   "dependencies": {
     "animejs": "^3.0.1",
     "babel-plugin-macros": "^2.6.1",
@@ -28,13 +31,18 @@
     "styled-system": "^5.0.15"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
     "@storybook/addon-a11y": "^5.1.9",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-knobs": "^5.1.9",
     "@storybook/addon-links": "^5.1.9",
     "@storybook/addon-options": "^5.1.9",
     "@storybook/addons": "^5.1.9",
-    "@storybook/react": "^5.1.9"
+    "@storybook/react": "^5.1.9",
+    "babel-jest": "^24.9.0",
+    "jest-cli": "^24.9.0"
   },
   "browserslist": {
     "production": [
