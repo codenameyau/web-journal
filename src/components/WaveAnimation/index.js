@@ -35,7 +35,8 @@ const Wave = styled.div`
   left: 0;
   height: 143px;
   width: 100%;
-  background: url(${waveImage}) repeat-x;
+  background: url(${({ image }) => image});
+  background-repeat: repeat-x;
   opacity: ${({ opacity }) => opacity || 1};
   animation: ${({ animation }) => animation || MoveLeft } 10s linear infinite;
 `;
@@ -55,8 +56,8 @@ export class WaveAnimation extends React.Component {
   render() {
     return (
       <Container>
-        <Wave animation={MoveRight} opacity=".75" />
-        <Wave animation={MoveLeft} opacity=".5" />
+        <Wave image={waveImage} animation={MoveRight} opacity=".75" />
+        <Wave image={waveImage} animation={MoveLeft} opacity=".5" />
       </Container>
     );
   }

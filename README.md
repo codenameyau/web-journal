@@ -1,4 +1,7 @@
 # web-journal
+Hello this is my collection of web development knowledge that I have
+accumulated. It contains console tips and tricks, reusable styled components,
+documentation, and much more.
 
 - Website: https://codenameyau.github.io/web-journal
 - Web Resources: https://github.com/codenameyau/web-journal/blob/master/docs/web-resources.md

@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { colors, fonts, fontWeights } from '../_internal/Theme';
-import { ResponsiveContainer } from '../_internal/Containers';
+import { colors, fonts, fontWeights } from '../_core/Theme';
+import { ResponsiveContainer } from '../_core/Containers';
 import * as d3 from 'd3';
 
 export const StyledSvg = styled.svg`
