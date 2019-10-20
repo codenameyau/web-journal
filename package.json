@@ -7,14 +7,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --env=jsdom --watch",
+    "test": "NODE_PATH=src react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "export NODE_PATH=src && start-storybook -p 9009 -s public",
     "build-storybook": "export NODE_PATH=src && build-storybook -s public",
     "deploy": "./bin/deploy-gh-pages"
-  },
-  "jest": {
-    "verbose": true
   },
   "dependencies": {
     "animejs": "^3.0.1",
@@ -44,6 +41,7 @@
     "@storybook/addons": "^5.1.9",
     "@storybook/react": "^5.1.9",
     "babel-jest": "^24.9.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "jest-cli": "^24.9.0"
   },
   "browserslist": {
