@@ -1,4 +1,5 @@
 import React from 'react';
+import Cartesian from 'react-cartesian';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 
@@ -18,6 +19,19 @@ stories.add('demo', () => (
   </Background>
 ));
 
+stories.add('cartesian', () => {
+  return (
+    <Cartesian
+      cols={3}
+      component={Background}
+      showProps={false}
+      props={{
+        background: ['red', 'green', 'blue'],
+      }}
+    />
+  );
+});
+
 stories.add('interactive', () => {
   return (
     <Background background="#FFC0CB">
@@ -29,8 +43,6 @@ stories.add('interactive', () => {
 stories.add('source code', () => (
   <Container>
     <GithubLink url="https://github.com/codenameyau/web-components/blob/master/src/components/WaveAnimation" />
-    <Description>
-      TBD
-    </Description>
+    <Description>TBD</Description>
   </Container>
 ));

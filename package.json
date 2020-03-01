@@ -42,7 +42,8 @@
     "@storybook/react": "^5.1.9",
     "babel-jest": "^24.9.0",
     "enzyme-adapter-react-16": "^1.15.1",
-    "jest-cli": "^24.9.0"
+    "jest-cli": "^24.9.0",
+    "react-cartesian": "^1.0.13"
   },
   "browserslist": {
     "production": [

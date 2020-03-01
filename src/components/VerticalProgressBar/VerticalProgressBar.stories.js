@@ -1,9 +1,9 @@
 import React from 'react';
+import Cartesian from 'react-cartesian';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs/react';
 import { number } from '@storybook/addon-knobs';
 
-import Cartesian from '../Cartesian/Cartesian';
 import Container from 'addons/Container';
 import GithubLink from 'addons/GithubLink';
 import Description from 'addons/Description';
@@ -30,6 +30,7 @@ stories.add('cartesian', () => (
   <Cartesian
     cols={4}
     component={VerticalProgressBar}
+    showCopy={false}
     props={{
       steps: [steps],
       completed: [0, 1, 2, 3],
