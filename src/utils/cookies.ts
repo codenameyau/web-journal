@@ -10,10 +10,10 @@ const defaultOptions = {
   maxAge: 1000 * 60 * 60 * 24 * 14, // 14 days
 };
 
-export const setCookie = (name: string, value: string, options: CookieOptions): string => {
-  const maxAge = options.maxAge || defaultOptions.maxAge;
-  const domain = options.domain || defaultOptions.domain;
-  const path = options.path || defaultOptions.path;
+export const setCookie = (name: string, value: string, options?: CookieOptions): string => {
+  const maxAge = options?.maxAge || defaultOptions.maxAge;
+  const domain = options?.domain || defaultOptions.domain;
+  const path = options?.path || defaultOptions.path;
 
   // Use insecure cookie for localhost since https is not set up yet.
   const useInsecureCookie = window.location.hostname.includes("localhost");
@@ -38,8 +38,8 @@ export const getCookie = (name: string): string | undefined => {
   return match ? match[1] : undefined;
 };
 
-export const deleteCookie = (name: string, options: CookieOptions): void => {
-  const path = options.path || defaultOptions.path;
-  const domain = options.domain || defaultOptions.domain;
+export const deleteCookie = (name: string, options?: CookieOptions): void => {
+  const path = options?.path || defaultOptions.path;
+  const domain = options?.domain || defaultOptions.domain;
   document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:01 GMT; domain=${domain}; path=${path}`;
 };
