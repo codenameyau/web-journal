@@ -9,7 +9,7 @@ interface CookieOptions {
 const defaultOptions = {
   domain: `${window.location.host}`,
   path: "/",
-  maxAge: 60 * 60 * 24 * 1, // 1 days
+  maxAge: 60 * 60 * 24 * 14, // 14 days
 };
 
 export const setCookie = (name: string, value: string, options?: CookieOptions): string => {
