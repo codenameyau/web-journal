@@ -64,3 +64,22 @@ copy(Array.from(document.images).reduce((acc, img) => acc + img.src + '\n', ''))
 ```
 window.frames
 ```
+
+### Jest
+
+Mock a library implementation.
+```
+jest.mock("@auth0/auth0-spa-js", () => {
+  return {
+    Auth0Client: jest.fn().mockImplementation(() => ({
+      logout: jest.fn(),
+      loginWithRedirect: jest.fn(),
+      getTokenSilently: jest.fn(),
+      getUser: jest.fn(),
+      getIdTokenClaims: jest.fn(),
+      checkSession: jest.fn(),
+      handleRedirectCallback: jest.fn(),
+    })),
+  };
+});
+```
