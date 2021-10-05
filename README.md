@@ -68,7 +68,8 @@ window.frames
 ### Jest
 
 Mock a library implementation.
-```
+
+```js
 jest.mock("@auth0/auth0-spa-js", () => {
   return {
     Auth0Client: jest.fn().mockImplementation(() => ({
