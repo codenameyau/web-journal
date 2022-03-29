@@ -42,7 +42,7 @@
 
 ## Unit Testing
 - Use react-testing-library in favor of enzyme.
-- Use selectors that select based on a11y selectors or text selectors. See this priority guideline.
+- Use selectors that select based on a11y selectors or text selectors. See this [priority guideline](https://testing-library.com/docs/queries/about/#priority).
 
 ## Linters
 - Use Prettier and ESLint with your code editor. The recommended editor to use is VSCode with the Prettier and ESLint Plugin.
