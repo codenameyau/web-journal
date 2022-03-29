@@ -2,7 +2,7 @@
 
 ## Typescript Guidelines
 - Use type inference when possible. It makes code a lot cleaner and easier to read.
-- Avoid using the any keyword.
+- Avoid using the *any* keyword.
 
 # Javascript Guidelines
 - Use Async / Await in favor of Promises. Promises are okay but should be used sparingly unless required. Avoid callback hell.
@@ -11,28 +11,28 @@
 - Prefer destructuring - if you are using keys from on object more than once, destructure them.
 - Prefer const over let and avoid using let to make a variable and then reassign it - if you need to do something like this you can make a separate function that returns and single value assign as a const.
 - Avoid single use variables.
-- Use React for all general FE applications.
-- Use Next.js for all server-side rendered applications.
-- Use Gatsby for static pages that need fast page load and SEO optimization. 
+- Use **React** for all general FE applications.
+- Use **Next.js** for all server-side rendered applications.
+- Use **Gatsby** for static pages that need fast page load and SEO optimization. 
 
 ## Styling and CSS
-- Use Material UI 5.
-- Use emotion or styled components.
+- Use **Material UI 5**.
+- Use **emotion** or **styled components**.
 - Do not write raw css, scss/less, inlines-css unless it's for a non-react application.
 
 ## State Management
-- Use Redux Toolkit for state management. We don't use React Query.
-- Prefer Redux Thunk over Redux Sagas (Dashboard is the only application that uses Sagas).
+- Use **Redux Toolkit** for state management. We don't use React Query.
+- Prefer **Redux Thunk** over **Redux Sagas** (Dashboard is the only application that uses Sagas).
 
 ## Third Party Vendors
-- Third-party trackers and analytics should be implemented via Segment if possible.
-- If Segment is not available, then use Google Tag Manager (GTM) so we can deploy and change trackers without depending on a release.
-- Use Heap for our FE event auto-capture, analytics, and visualization.
+- Third-party trackers and analytics should be implemented via **Segment** if possible.
+- If Segment is not available, then use **Google Tag Manager** (GTM) so we can deploy and change trackers without depending on a release.
+- Use **Heap** for our FE event auto-capture, analytics, and visualization.
 - Make sure that you get security sign-off before adding a new third-party vendor. Follow our Vendor Review Process.
 - For open source libraries, we generally don't need a vendor review but please make sure that the library is popular and well maintained.
 
 ## Authentication
-- Use Auth0 as the auth provider with OAuth2.0 JWT bearer tokens to authenticate with our backend services.
+- Use **Auth0** as the auth provider with **OAuth2.0 JWT bearer tokens** to authenticate with our backend services.
 - Do not store auth tokens in local storage or cookies. They should only be stored in memory.
 
 ## Build Tools
