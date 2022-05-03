@@ -17,8 +17,10 @@
 
 ## Styling and CSS
 - Use **Material UI 5**.
-- Use **emotion** or **styled components**.
-- Do not write raw css, scss/less, inlines-css unless it's for a non-react application.
+- Use **emotion** or styled components as a fallback.
+- Avoid raw CSS, Sass/Less, inline CSS for react applications.
+- Use 2004 inline CSS for email templates.
+- Use CSS or CSS preprocessor (Sass/Less) for wordpress and non-react applications.
 
 ## State Management
 - Use **Redux Toolkit** for state management. We don't use React Query.
@@ -43,6 +45,7 @@
 ## Unit Testing
 - Use react-testing-library in favor of enzyme.
 - Use selectors that select based on a11y selectors or text selectors. See this [priority guideline](https://testing-library.com/docs/queries/about/#priority).
+- Be careful of memory leaks. See this article: https://chanind.github.io/javascript/2019/10/12/jest-tests-memory-leak.html
 
 ## Linters
 - Use Prettier and ESLint with your code editor. The recommended editor to use is VSCode with the Prettier and ESLint Plugin.
