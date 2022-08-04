@@ -1,5 +1,6 @@
 # Web Resources
 - [Web Resources](#web-resources)
+    - [Software](#software)
     - [React Checklist](#react-checklist)
     - [Stock Photos](#stock-photos)
     - [Templates](#templates)
@@ -9,6 +10,9 @@
     - [Backgrounds](#backgrounds)
     - [Sounds](#sounds)
     - [Blogs and Content](#blogs-and-content)
+
+### Software
+- [Responsively](https://responsively.app/download) - Easier Responsive Development
 
 ### React Checklist
 - [Awesome React](https://github.com/enaqx/awesome-react) - The awesome react list
