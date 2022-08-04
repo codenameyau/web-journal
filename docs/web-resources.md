@@ -13,6 +13,7 @@
 
 ### Software
 - [Responsively](https://responsively.app/download) - Easier Responsive Development
+- [Licecap](https://www.cockos.com/licecap/) - GIF screenshot creator
 
 ### React Checklist
 - [Awesome React](https://github.com/enaqx/awesome-react) - The awesome react list
